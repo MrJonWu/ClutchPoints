@@ -9,7 +9,7 @@ Install these if you don't have them already:
 - Yarn (https://yarnpkg.com/lang/en/docs/install/#mac-tab)
 - Webpack (globally) (https://webpack.js.org/guides/installation/#global-installation)
 
-You will need to create or copy a 'config.json' file into the /config with the sports radar api key.
+You will need to create or copy a 'config.json' file into the /config with the sports radar api key. 'exampleConfig.json' is there as a sample and is not used by the app.
 
 Then run the following from the root directory:
 
