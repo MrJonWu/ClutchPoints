@@ -65,8 +65,8 @@ export default class PlayerStats extends React.Component {
     return (
       <div>
         <Container>
-          <h3>{this.state.team.market +' ' + this.state.team.name}</h3>
-          <Table striped>
+          <h3 style={{color: 'white'}}>{this.state.team.market + ' ' + this.state.team.name}</h3>
+          <Table striped inverted>
             <Table.Header>
               <Table.Row>
                 {this.state.tableHeaders.map((header, key) => {
@@ -77,23 +77,25 @@ export default class PlayerStats extends React.Component {
 
             <Table.Body>
               {this.state.players.map((player, key) => {
-                return <Table.Row key={key}>
-                  {player.starter ? <Table.Cell><strong>{player.full_name}</strong> - <small><i>{player.primary_position}</i></small></Table.Cell> : <Table.Cell>{player.full_name} - <small><i>{player.primary_position}</i></small></Table.Cell>}
-                  <Table.Cell>{player.statistics.minutes}</Table.Cell>
-                  <Table.Cell>{player.statistics.field_goals_made + '-' + player.statistics.field_goals_att}</Table.Cell>
-                  <Table.Cell>{player.statistics.three_points_made + '-' + player.statistics.three_points_att}</Table.Cell>
-                  <Table.Cell>{player.statistics.free_throws_made + '-' + player.statistics.free_throws_att}</Table.Cell>
-                  <Table.Cell>{player.statistics.offensive_rebounds}</Table.Cell>
-                  <Table.Cell>{player.statistics.defensive_rebounds}</Table.Cell>
-                  <Table.Cell>{player.statistics.rebounds}</Table.Cell>
-                  <Table.Cell>{player.statistics.assists}</Table.Cell>
-                  <Table.Cell>{player.statistics.steals}</Table.Cell>
-                  <Table.Cell>{player.statistics.blocks}</Table.Cell>
-                  <Table.Cell>{player.statistics.turnovers}</Table.Cell>
-                  <Table.Cell>{player.statistics.personal_fouls}</Table.Cell>
-                  <Table.Cell>{player.statistics.pls_min}</Table.Cell>
-                  <Table.Cell>{player.statistics.points}</Table.Cell>
-                </Table.Row>;
+                if (player.played) {
+                  return <Table.Row key={key}>
+                    {player.starter ? <Table.Cell><strong>{player.full_name}</strong> - <small><i>{player.primary_position}</i></small></Table.Cell> : <Table.Cell>{player.full_name} - <small><i>{player.primary_position}</i></small></Table.Cell>}
+                    <Table.Cell>{player.statistics.minutes}</Table.Cell>
+                    <Table.Cell>{player.statistics.field_goals_made + '-' + player.statistics.field_goals_att}</Table.Cell>
+                    <Table.Cell>{player.statistics.three_points_made + '-' + player.statistics.three_points_att}</Table.Cell>
+                    <Table.Cell>{player.statistics.free_throws_made + '-' + player.statistics.free_throws_att}</Table.Cell>
+                    <Table.Cell>{player.statistics.offensive_rebounds}</Table.Cell>
+                    <Table.Cell>{player.statistics.defensive_rebounds}</Table.Cell>
+                    <Table.Cell>{player.statistics.rebounds}</Table.Cell>
+                    <Table.Cell>{player.statistics.assists}</Table.Cell>
+                    <Table.Cell>{player.statistics.steals}</Table.Cell>
+                    <Table.Cell>{player.statistics.blocks}</Table.Cell>
+                    <Table.Cell>{player.statistics.turnovers}</Table.Cell>
+                    <Table.Cell>{player.statistics.personal_fouls}</Table.Cell>
+                    <Table.Cell>{player.statistics.pls_min}</Table.Cell>
+                    <Table.Cell>{player.statistics.points}</Table.Cell>
+                  </Table.Row>;
+                }
               })}
             </Table.Body>
           </Table>

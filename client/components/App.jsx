@@ -28,7 +28,7 @@ export default class App extends React.Component {
       <div style={{textAlign: 'center'}}>
         {this.state.data ? 
         <div>
-          <h1>NBA Finals {this.state.data.title}</h1>
+          <h1 style={{color: 'white'}}>NBA Finals {this.state.data.title}</h1>
           <Boxscore home={this.state.data.home} away={this.state.data.away} />
           <PlayerStats team={this.state.data.home} />
           <PlayerStats team={this.state.data.away} />
