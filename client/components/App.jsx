@@ -1,7 +1,17 @@
 import React from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
 import Boxscore from './Boxscore.jsx';
 import PlayerStats from './PlayerStats.jsx';
+
+const Title = styled.h1`
+  color: white;
+`;
+
+const CenteredDiv = styled.div`
+  text-align: center;
+  padding-top: 50px;
+`;
 
 export default class App extends React.Component {
   constructor(props) {
@@ -25,15 +35,15 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div style={{textAlign: 'center'}}>
+      <CenteredDiv>
         {this.state.data ? 
         <div>
-          <h1 style={{color: 'white'}}>NBA Finals {this.state.data.title}</h1>
+          <Title>NBA Finals {this.state.data.title}</Title>
           <Boxscore home={this.state.data.home} away={this.state.data.away} />
           <PlayerStats team={this.state.data.home} />
           <PlayerStats team={this.state.data.away} />
-        </div> : <h1>Loading...</h1>}
-      </div>
+        </div> : <Title>Loading...</Title>}
+      </CenteredDiv>
     );
   }
 }

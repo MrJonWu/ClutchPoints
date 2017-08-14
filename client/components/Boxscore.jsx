@@ -13,38 +13,35 @@ export default class Boxscore extends React.Component {
           <Grid centered>
             <Grid.Row>
               <Table collapsing inverted>
-                <Table.Body>
-
+                <Table.Header>
                   <Table.Row>
-                    <Table.Cell>FINAL</Table.Cell>
-                    <Table.Cell>T</Table.Cell>
-                    <Table.Cell>Q1</Table.Cell>
-                    <Table.Cell>Q2</Table.Cell>
-                    <Table.Cell>Q3</Table.Cell>
-                    <Table.Cell>Q4</Table.Cell>
+                    <Table.HeaderCell>FINAL</Table.HeaderCell>
+                    <Table.HeaderCell>Q1</Table.HeaderCell>
+                    <Table.HeaderCell>Q2</Table.HeaderCell>
+                    <Table.HeaderCell>Q3</Table.HeaderCell>
+                    <Table.HeaderCell>Q4</Table.HeaderCell>
+                    <Table.HeaderCell>T</Table.HeaderCell>
                   </Table.Row>
+                </Table.Header>
 
+                <Table.Body>
                   <Table.Row>
                     <Table.Cell><strong>{this.props.home.name}</strong></Table.Cell>
+                    {this.props.home.scoring.map((quarter,key) => {
+                      return <Table.Cell key={key}>{quarter.points}</Table.Cell>
+                    })}
                     <Table.Cell>{this.props.home.points}</Table.Cell>
-                    <Table.Cell>{this.props.home.scoring[0].points}</Table.Cell>
-                    <Table.Cell>{this.props.home.scoring[1].points}</Table.Cell>
-                    <Table.Cell>{this.props.home.scoring[2].points}</Table.Cell>
-                    <Table.Cell>{this.props.home.scoring[3].points}</Table.Cell>
                   </Table.Row>
 
                   <Table.Row>
                     <Table.Cell><strong>{this.props.away.name}</strong></Table.Cell>
+                    {this.props.away.scoring.map((quarter,key) => {
+                      return <Table.Cell key={key}>{quarter.points}</Table.Cell>
+                    })}
                     <Table.Cell>{this.props.away.points}</Table.Cell>
-                    <Table.Cell>{this.props.away.scoring[0].points}</Table.Cell>
-                    <Table.Cell>{this.props.away.scoring[1].points}</Table.Cell>
-                    <Table.Cell>{this.props.away.scoring[2].points}</Table.Cell>
-                    <Table.Cell>{this.props.away.scoring[3].points}</Table.Cell>
                   </Table.Row>
-
                 </Table.Body>
               </Table>
-              
             </Grid.Row>
           </Grid>
         </Container>
