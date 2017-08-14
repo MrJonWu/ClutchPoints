@@ -5,9 +5,9 @@ View the results of game 5 of the NBA Finals
 
 Install these if you don't have them already:
 
--Homebrew (https://brew.sh/)
--Yarn (https://yarnpkg.com/lang/en/docs/install/#mac-tab)
--Webpack (globally) (https://webpack.js.org/guides/installation/#global-installation)
+- Homebrew (https://brew.sh/)
+- Yarn (https://yarnpkg.com/lang/en/docs/install/#mac-tab)
+- Webpack (globally) (https://webpack.js.org/guides/installation/#global-installation)
 
 You will need to create or copy a 'config.json' file into the /config with the sports radar api key.
 
